@@ -10,7 +10,7 @@ import App from './components/App'
 import './css/index.css'
 
 const logger = createLogger({ 
-	collapsed: !false
+  collapsed: !false
 });
 
 
@@ -21,7 +21,7 @@ const initiallStore = {
   todos: [
     { 
       id: 1,
-      text: 'Learn React well',
+      text: 'First, learn React well',
       completed: true,
     },{ 
       id: 2,
@@ -37,7 +37,7 @@ const initiallStore = {
 
 const store = createStore(
   todoApp,
-	initiallStore,
+  initiallStore,
   applyMiddleware(logger)
 )
 

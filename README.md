@@ -1,8 +1,8 @@
 ## Redux Todo list
 
-This is IMHO more readable and undersandable example than [official](https://github.com/reactjs/redux/tree/master/examples/todos). Some confusing parts like this [`todo` constant](https://github.com/reactjs/redux/blob/master/examples/todos/src/reducers/todos.js#L1-L21) has been removed. Basicaly, it was helper method which looks like a reducer - but it is not. It is function which is passed to the `todos` reducer. Yeah, it gets `state` and `action` as parameters like reducer should - but still, `todo` constant is not a reducer.
+This is IMHO more readable and undersandable example than [official](https://github.com/reactjs/redux/tree/master/examples/todos). Some confusing parts like this [`todo` constant](https://github.com/reactjs/redux/blob/master/examples/todos/src/reducers/todos.js#L1-L21) has been removed. Basicaly, `todo` is helper method which looks like a reducer - but it is **not**. It is function which is passed to the `todos` reducer. Yeah, it gets `state` and `action` as parameters like reducer should - but still, `todo` constant is not a reducer.
 
-Now, instead of
+Now, instead of having this:
 ```js
 const todo = (state, action) => {
   switch (action.type) {
@@ -45,7 +45,7 @@ const todos = (state = [], action) => {
 export default todos
 
 ```
-in `src/reducers/todos.js` we have:
+in `src/reducers/todos.js` we have just this:
 
 ```js
 const todos = (state = [], action) => {
@@ -84,14 +84,14 @@ const  getVisibleTodos = (todos, filter) => {
 ```
 
 
-I have added initial store in `src/index.js`:
+I have added initiall store in `src/index.js`:
 ```js
 const initiallStore = {
   visibilityFilter: 'SHOW_ALL',
   todos: [
     { 
       id: 1,
-      text: 'Learn React well',
+      text: 'First, learn React well',
       completed: true,
     },{ 
       id: 2,
