@@ -20,15 +20,15 @@ const initiallStore = {
   visibilityFilter: 'SHOW_ALL',
   todos: [
     { 
-			id: 1,
+      id: 1,
       text: 'Learn React well',
       completed: true,
     },{ 
-			id: 2,
+      id: 2,
       text: 'Consider using Redux',
       completed: true,
     },{
-			id: 3,
+      id: 3,
       text: 'Keep all state in a single tree',
       completed: false
     }
