@@ -1,6 +1,6 @@
 ## Redux Todo list
 
-This is IMHO more readable and undersandable example than [official](https://github.com/reactjs/redux/tree/master/examples/todos). Some confusing parts like this [`todo` constant](https://github.com/reactjs/redux/blob/master/examples/todos/src/reducers/todos.js#L1-L21) has been removed. Basicaly, `todo` is helper method which looks like a reducer - but it is **not**. It is function which is passed to the `todos` reducer. Yeah, it gets `state` and `action` as parameters like reducer should - but still, `todo` constant is not a reducer.
+This is IMHO more readable and undersandable example than [official](https://github.com/reactjs/redux/tree/master/examples/todos). Some confusing parts like this [`todo` constant](https://github.com/reactjs/redux/blob/master/examples/todos/src/reducers/todos.js#L1-L21) has been removed. Basicaly, `todo` is helper function which looks like a reducer - but it is **not**. `todo` is a function which is passed to the `todos` reducer. Yeah, it gets `state` and `action` as parameters like reducer should - but still, `todo` constant is not a reducer.
 
 Now, instead of having this:
 ```js
@@ -43,7 +43,6 @@ const todos = (state = [], action) => {
 }
 
 export default todos
-
 ```
 in `src/reducers/todos.js` we have just this:
 
@@ -71,7 +70,6 @@ const todos = (state = [], action) => {
 }
  
 export default todos
-
 ```
 Also `getVisibleTodos` in [src/containers/VisibleTodoList.js](https://github.com/reactjs/redux/blob/master/examples/todos/src/containers/VisibleTodoList.js#L5-L16) is updated so instead of using switch statement, `if` conditional has been used.
 ```js
@@ -80,7 +78,6 @@ const  getVisibleTodos = (todos, filter) => {
  if (filter === 'SHOW_COMPLETED') {return todos.filter(t => t.completed)} 
  if (filter === 'SHOW_ACTIVE') {return todos.filter(t => !t.completed)}
 }
-
 ```
 
 
@@ -104,7 +101,6 @@ const initiallStore = {
     }
   ]
 }
-
 ```
 
 
@@ -126,6 +122,5 @@ const store = createStore(
   initiallStore,
   applyMiddleware(logger)
 )
-
 ```
 
