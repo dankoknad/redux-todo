@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+	padding-top: 50px;
+	text-align: center;
+  font-family: sans-serif;
+	color: #fff;
+	background-color: #333;
+}
+
+input, button {
+	padding: 5px 10px;
+}
+
+ul {
+	display: inline-block;
+}
+
+li {
+	list-style: none;
+	cursor: pointer;
+}
+
+li:hover {
+	color: #f0f;
+}
+
+a {
+	color: #fff;
+}
